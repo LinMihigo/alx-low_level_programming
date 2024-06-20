@@ -9,9 +9,6 @@
   */
 int main(void)
 {
-	const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19,\n";
-	int message_length = sizeof(message) / sizeof(char);
-
-	write(STDERR_FILENO, message, message_length);
-	return (1);
+	errx(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19,");
+	return (0);
 }
