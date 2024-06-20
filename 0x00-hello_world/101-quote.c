@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include <err.h>
 /**
   * main - A function that prints a string
   * Description: A program that prints the string "and that piece
@@ -9,6 +9,6 @@
   */
 int main(void)
 {
-	errx(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19,");
+	errx(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19");
 	return (0);
 }
