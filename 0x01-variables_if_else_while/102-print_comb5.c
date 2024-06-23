@@ -17,7 +17,7 @@ int main(void)
     while (i < 10)
     {
         int j = 0;
-        while (j < 10)
+        while (j < 9)
         {
             int k = 0;
             while (k < 10)
@@ -30,7 +30,9 @@ int main(void)
                     y = '0' + k;
                     z = '0' + l;
 
-                        if (i <= k && j < l)
+                    if (i != k || j != l)
+                    {
+                        if (i <= k && j <= l)
                         {
                             putchar(w);
                             putchar(x);
@@ -44,7 +46,7 @@ int main(void)
                                 putchar(' ');
                             }
                         }
-
+                    }
                     l++;
                 }
                 k++;
