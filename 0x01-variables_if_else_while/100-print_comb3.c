@@ -21,19 +21,18 @@ int main(void)
 			x = '0' + i;
 			y = '0' + j;
 
-			if (i != j && i < 8 && j < 9)
+			if (i != j)
 			{
 				putchar(x);
 				putchar(y);
-				putchar(',');
-				putchar(' ');
+
+				if (i != 8 || j != 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			if (i == 8 && j == 9)
-			{
-				putchar(x);
-				putchar(y);
-			}
-			++j;
+			j++;
 		}
 		i++;
 	}
