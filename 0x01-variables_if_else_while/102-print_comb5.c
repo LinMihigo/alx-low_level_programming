@@ -8,55 +8,37 @@
 */
 int main(void)
 {
-    int w;
-	int x;
-    int y;
-    int z;
-	int i = 0;
-    
-    while (i < 10)
-    {
-        int j = 0;
-        while (j < 10)
-        {
-            int k = 0;
-            while (k < 10)
-            {
-                int l = 0;
-                while (l < 10)
-                {
-                    w = '0' + i;
-                    x = '0' + j;
-                    y = '0' + k;
-                    z = '0' + l;
+	int i, j, k, l;
 
-                    if (i != k || j != l)
-                    {
-                        if (i < k || (i == k && l > j))
-                        {
-                            putchar(w);
-                            putchar(x);
-                            putchar(' ');
-                            putchar(y);
-                            putchar(z);
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 0; i < 10; j++)
+		{
+			for (k = 0; k < 10; k++)
+			{
+				for (l = 0; l < 10; l++)
+				{
+					if (i != k || j != l)
+					{
+						if (i < k || (i == k && l > j))
+						{
+							putchar('0' + i);
+							putchar('0' + j);
+							putchar(' ');
+							putchar('0' + k);
+							putchar('0' + l);
 
-                            if (i < 9 || j < 8 || k < 9 || l < 9)
-                            {
-                                putchar(',');
-                                putchar(' ');
-                            }
-                        }
-                    }
-                    l++;
-                }
-                k++;
-            }
-            j++;
-        }
-        i++;
-    }
-
+							if (i < 9 || j < 8 || k < 9 || l < 9)
+							{
+								putchar(',');
+								putchar(' ');
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	putchar('\n');
-
 	return (0);
 }
