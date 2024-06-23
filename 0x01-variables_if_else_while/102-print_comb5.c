@@ -32,7 +32,7 @@ int main(void)
 
                     if (i != k || j != l)
                     {
-                        if (i <= k && (i = k && l > j))
+                        if (i < k || (i == k && l > j))
                         {
                             putchar(w);
                             putchar(x);
