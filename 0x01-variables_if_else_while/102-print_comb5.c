@@ -17,7 +17,7 @@ int main(void)
     while (i < 10)
     {
         int j = 0;
-        while (j < 9)
+        while (j < 10)
         {
             int k = 0;
             while (k < 10)
