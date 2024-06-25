@@ -1,11 +1,19 @@
-#include <stdio.h>
+#include "main.h"
 /**
-* _putchar - a function
-* Description - Prints '_putchar' followed by a new line
+* main - Entry point
 * Return: 0
 */
-int _putchar(void)
+int main(void)
 {
-	putchar('_putchar');
-	putchar('\n');
+	char al[] = "_putchar";
+	int i;
+
+
+	for (i = 0; i < 8; i++)
+	{
+		_putchar(al[i]);
+	}
+
+	_putchar('\n');
+	return (0);
 }
