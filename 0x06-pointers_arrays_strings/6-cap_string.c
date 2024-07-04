@@ -4,6 +4,7 @@
 * @str: param
 * Return: char
 */
+
 char *cap_string(char *str)
 {
 	int i;
