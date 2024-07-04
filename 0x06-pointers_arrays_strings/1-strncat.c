@@ -17,10 +17,11 @@ char *_strncat(char *dest, char *src, int n)
 	for (strlen = 0; dest[strlen] != '\0'; strlen++)
 	;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
 		dest[strlen++] = src[i];
 	}
+	dest[strlen + i] = '\0';
 
 	return (dest);
 }
