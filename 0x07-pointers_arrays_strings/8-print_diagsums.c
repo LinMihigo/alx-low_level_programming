@@ -4,17 +4,20 @@
  * @a: input pointer
  * Return: return nothing
 */
-void print_chessboard(char (*a)[8])
+void print_diagsums(int *a, int size)
 {
 	int i;
-	int j;
 
-	for (i = 0; i < 8; i++)
+	unsigned int sum, sum1;
+
+	sum = 0;
+	sum1 = 0;
+
+	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j < 8; j++)
-		{
-			_putchar(a[i][j]);
-		}
-		_putchar('\n');
+		sum += a[(size * i) + i];
+		sum1 += a[(size * (i + 1)) - (i + 1)];
 	}
+
+	printf("%d, %d\n", sum, sum1);
 }
