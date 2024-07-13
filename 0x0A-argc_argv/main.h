@@ -2,7 +2,6 @@
 #define HEADER_H
 
 #include <stdio.h>
-
-int _atoi(char *s);
+#include <stdlib.h>
 
 #endif
