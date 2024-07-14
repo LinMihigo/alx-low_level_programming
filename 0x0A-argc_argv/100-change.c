@@ -21,11 +21,6 @@ int main(int argc, char *argv[])
 		num = atoi(argv[1]);
 	}
 
-	if (num < 0)
-	{
-		printf("%d\n", 0);
-	}
-
 	while (i < 5) /* Catering for when num = 0 */
 	{
 		if (num - arr[i] >= 0)
