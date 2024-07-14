@@ -19,19 +19,18 @@ int main(int argc, char *argv[])
 	else
 	{
 		num = atoi(argv[1]);
-	}
 
-	while (i < 5) /* Catering for when num = 0 */
-	{
-		if (num - arr[i] >= 0)
+		while (num > 0) /* Catering for when num = 0 */
 		{
-			num -= arr[i];
-			n++;
-			printf("i: %d, num: %d, arr[i]: %d\n", i, num, arr[i]);
-		}
-		else if (num - arr[i] < 0)
-		{
-			i++;
+			if (num - arr[i] >= 0)
+			{
+				num -= arr[i];
+				n++;
+			}
+			else if (num - arr[i] < 0)
+			{
+				i++;
+			}
 		}
 	}
 
