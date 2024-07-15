@@ -23,8 +23,14 @@ int _strlen(char *str)
 char *_strdup(char *str)
 {
 	int j = 0;
-	int n = _strlen(str) + 1; /* Adding 1 coz _strlen checks till \0 */
-	char *ar = malloc(sizeof(char) * n);
+	int n;
+	char *ar;
+
+	if (str == NULL)
+		return ('\0');
+
+	n = _strlen(str) + 1; /* Adding 1 coz _strlen checks till \0 */
+	ar = malloc(sizeof(char) * n);
 
 	if (ar == NULL)
 		return ('\0');
