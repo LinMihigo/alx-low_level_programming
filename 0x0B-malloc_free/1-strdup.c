@@ -26,6 +26,9 @@ char *_strdup(char *str)
 	int n = _strlen(str) + 1; /* Adding 1 coz _strlen checks till \0 */
 	char *ar = malloc(sizeof(char) * n);
 
+	if (ar == NULL || *str == NULL)
+		return ('\0');
+
 	while (j < n && *(str + j) != '\0')
 	{
 		ar[j] = str[j];
