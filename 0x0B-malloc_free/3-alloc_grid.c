@@ -6,7 +6,8 @@
 * Return: a pointer to the first value of the array */
 int **alloc_grid(int width, int height)
 {
-	int i, j, **ar;
+	int **ar;
+	int i, j;
 
 	if (width <= 0 || height <= 0)
 		return ('\0');
