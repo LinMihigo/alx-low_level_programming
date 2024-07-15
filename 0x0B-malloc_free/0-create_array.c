@@ -11,19 +11,19 @@ char *create_array(unsigned int size, char c)
 	char *ar = malloc(size * sizeof(char));
 
 	if (size == 0)
-	{
 		return ('\0');
-	}
 
 	while (i < size)
 	{
 		if (i == size - 1)
-		{
 			ar[i] = '\0';
-		}
+
 		ar[i] = c;
 		i++;
 	}
 
-	return (ar);
+	if (ar == NULL)
+		return ('\0');
+	else
+		return (ar);
 }
