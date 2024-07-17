@@ -6,16 +6,17 @@
 */
 int string_count(char *str)
 {
-	int i = 0, strcount = 0;
+	int i, strcount = 0;
 
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((str[i] != ' ' && str[i + 1] == ' ')
-		|| (str[i] != ' ' && str[i + 1] == '\0'))
+		if (str[i] != ' ')
 		{
-			strcount++;
+			if ((str[i + 1] == ' ') || (str[i + 1] == '\0'))
+			{
+				strcount++;
+			}
 		}
-		i++;
 	}
 	return (strcount);
 }
@@ -27,8 +28,10 @@ int string_count(char *str)
 char **strtow(char *str)
 {
 	char **arr;
+	int i = 0, j = 0, len = 0, idx = 0;
 
-	int i = 0, j = 0, k = 0, len = 0;
+	if (str == NULL || str == "")
+		return (NULL);
 
 	arr = malloc(sizeof(char *) * (string_count(str) + 1));
 
@@ -51,8 +54,7 @@ char **strtow(char *str)
 		arr[j] = malloc(sizeof(char) * (len + 1));
 		arr[j][len] = '\0';
 
-		int idx = 0;
-
+		idx = 0;
 		i -= len;
 		while (idx < len)
 		{
