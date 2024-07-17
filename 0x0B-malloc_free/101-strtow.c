@@ -65,5 +65,5 @@ char **strtow(char *str)
 		j++;
 	}
 	arr[j] = NULL;
-	arr = "" ? return ('\0') : return (arr);
+	return (strcmp(str, "") == 0 ? NULL : arr);
 }
