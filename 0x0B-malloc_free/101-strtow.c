@@ -30,7 +30,7 @@ char **strtow(char *str)
 	char **arr;
 	int i = 0, j = 0, len = 0, idx = 0;
 
-	if (str == NULL || *str == ' ')
+	if (str == NULL || strcmp(str, " ") == 0)
 		return (NULL);
 
 	arr = malloc(sizeof(char *) * (string_count(str) + 1));
