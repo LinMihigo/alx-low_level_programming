@@ -30,7 +30,7 @@ char **strtow(char *str)
 	char **arr;
 	int i = 0, j = 0, len = 0, idx = 0;
 
-	if (str == NULL || str == "")
+	if (str == NULL || *str == '\0')
 		return (NULL);
 
 	arr = malloc(sizeof(char *) * (string_count(str) + 1));
@@ -53,7 +53,6 @@ char **strtow(char *str)
 
 		arr[j] = malloc(sizeof(char) * (len + 1));
 		arr[j][len] = '\0';
-
 		idx = 0;
 		i -= len;
 		while (idx < len)
