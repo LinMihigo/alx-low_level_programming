@@ -24,42 +24,31 @@ int _strlen(char *str)
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int j, k, n1, n2;
+	unsigned int j, k, n1, n2, limit;
+
 	char *ar;
 
-	if (s1 == NULL || s2 == NULL)
-	{
-		if (s1 == NULL)
-			s1 = "";
-		if (s2 == NULL)
-			s2 = "";
-	}
-
+	s1 = s1 ? s1 : "";
+	s2 = s2 ? s2 : "";
 	n1 = _strlen(s1);
 	n2 = _strlen(s2);
+
 	ar = malloc(sizeof(char) * (n1 + (n >= n2 ? n2 : n) + 1));
+	if (!ar)
+		return (NULL);
 
-	if (ar == NULL)
-		return ('\0');
-
-	for (j = 0; j < n1 && *(s1 + j) != '\0'; j++)
+	for (j = 0; j < n1; j++)
 	{
 		ar[j] = s1[j];
 	}
 
-	if (n >= n2)
+	limit = n >= n2 ? n2 : n;
+	for (k = 0; k < limit; k++)
 	{
-		for (k = 0; k < n2 && *(s2 + k) != '\0'; k++)
-		{
-			ar[n1 + k] = s2[k];
-		}
+		ar[n1 + k] = s2[k];
 	}
-	else
-	{
-		for (k = 0; k < n && *(s2 + k) != '\0'; k++)
-		{
-			ar[n1 + k] = s2[k];
-		}
-	}
+
+	ar[n1 + limit] = '\0';
+
 	return (ar);
 }
