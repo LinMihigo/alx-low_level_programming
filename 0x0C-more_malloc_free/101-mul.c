@@ -1,5 +1,50 @@
 #include "main.h"
 /**
+* is_digit - checks if a string contains a non-digit char
+* @s: string to be evaluated
+*
+* Return: 0 if a non-digit is found, 1 otherwise
+*/
+int is_digit(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/**
+* _strlen - returns the length of a string
+* @s: string to evaluate
+*
+* Return: the length of the string
+*/
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
+* errors - handles errors for main
+*/
+void errors(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+/**
 * init_result - initialises result array
 * @result: pointer
 * @len: length
@@ -8,7 +53,9 @@
 /* Helper function to initialize result array */
 void init_result(int *result, int len)
 {
-	for (int i = 0; i < len; i++)
+	int i;
+
+	for (i = 0; i < len; i++)
 
 	{
 		result[i] = 0;
@@ -24,9 +71,9 @@ void init_result(int *result, int len)
 /* Helper function to print the result */
 void print_result(int *result, int len)
 {
-	int startPrinting = 0;
+	int i, startPrinting = 0;
 
-	for (int i = 0; i < len - 1; i++)
+	for (i = 0; i < len - 1; i++)
 
 	{
 		if (!startPrinting && result[i])
@@ -52,7 +99,7 @@ void print_result(int *result, int len)
 */
 int main(int argc, char *argv[])
 {
-	int carry, digit1, digit2;
+	int i, j, carry, digit1, digit2;
 	char *num1 = argv[1], *num2 = argv[2];
 	int len1 = _strlen(num1), len2 = _strlen(num2);
 	int len = len1 + len2 + 1;
@@ -68,11 +115,11 @@ int main(int argc, char *argv[])
 
 	init_result(result, len);
 
-	for (int i = len1 - 1; i >= 0; i--)
+	for (i = len1 - 1; i >= 0; i--)
 	{
 		digit1 = num1[i] - '0';
 		carry = 0;
-		for (int j = len2 - 1; j >= 0; j--)
+		for (j = len2 - 1; j >= 0; j--)
 
 		{
 			digit2 = num2[j] - '0';
