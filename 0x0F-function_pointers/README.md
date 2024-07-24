@@ -1,0 +1,1 @@
+“Szeth-son-son-Vallano, Truthless of Shinovar, wore white on the day he was to kill a king […] White to be bold. White to not blend into the night. White to give warning. For if you were going to assassinate a man, he was entitled to see you coming.” - Brandon Sanderson, The Way of Kings.
