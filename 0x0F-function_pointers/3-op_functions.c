@@ -1,4 +1,3 @@
-#include "3-calc.h"
 /**
 * op_add - returns sum
 * @a: num1
