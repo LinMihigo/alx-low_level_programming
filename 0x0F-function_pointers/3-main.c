@@ -7,8 +7,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int res, num1 = atoi(argv[1]), num2 = atoi(argv[3]);
-	int (*f)(int, int);
+	int num1 = atoi(argv[1]), num2 = atoi(argv[3]);
 
 	if (argc != 4)
 	{
@@ -16,8 +15,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	f = get_op_func(argv[2]);
-	if (!f)
+	if (get_op_func(argv[2]) == NULL && strlen(argv[2]) != 1)
 	{
 		printf("%s\n", "Error");
 		exit(99);
@@ -29,9 +27,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	res = f(num1, num2);
-
-	printf("%d\n", res);
+	printf("%d\n", get_op_func(argv[2])(num1, num2));
 
 	return (0);
 }

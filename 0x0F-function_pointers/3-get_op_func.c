@@ -17,7 +17,7 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while (strlen(s) == 1 && i < 5)
+	while (i < 5)
 	{
 		if (strcmp(ops[i].str, s) == 0)
 		{
