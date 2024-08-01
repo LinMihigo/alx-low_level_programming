@@ -27,7 +27,8 @@ void print_int(unsigned int num)
 */
 size_t print_list(const list_t *h)
 {
-	int i = 0, n = 0;
+	int i = 0;
+	size_t n = 0;
 
 	while (h != NULL)
 	{
