@@ -15,5 +15,5 @@ main:
     syscall
 
 section .data
-    message db 'Hello, Holberton', 0
-    format db '%s', 10, 0   ; %s for string, 10 for newline, 0 for \0
+    message db 'Hello, Holberton\n', 0
+    format db '%s', 0   ; %s for string, 10 for newline, 0 for \0
