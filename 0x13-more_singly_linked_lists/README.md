@@ -1,0 +1,1 @@
+“That’s kind of what trust is, isn’t it? A willful self-delusion.” - Brandon Sanderson - Mistborn: The final Empire
