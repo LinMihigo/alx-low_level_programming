@@ -17,30 +17,30 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (hare && hare->next)
 	{
-		printf("[%p] %d\n", tortoise, tortoise->n);
+		printf("[%p] %d\n", (void *)tortoise, tortoise->n);
 		count++;
 		tortoise = tortoise->next;
 		hare = hare->next->next;
 
 		if (tortoise == hare)
 		{
-			printf("[%p] %d\n", tortoise, tortoise->n);
+			printf("[%p] %d\n", (void *)tortoise, tortoise->n);
 			count++;
 			tortoise = tortoise->next;
 			while (tortoise != hare)
 			{
-				printf("[%p] %d\n", tortoise, tortoise->n);
+				printf("[%p] %d\n", (void *)tortoise, tortoise->n);
 				count++;
 				tortoise = tortoise->next;
 			}
-			printf("-> [%p] %d\n", tortoise, tortoise->n);
+			printf("-> [%p] %d\n", (void *)tortoise, tortoise->n);
 			return (count);
 		}
 	}
 
 	while (tortoise)
 	{
-		printf("[%p] %d\n", tortoise, tortoise->n);
+		printf("[%p] %d\n", (void *)tortoise, tortoise->n);
 		count++;
 		tortoise = tortoise->next;
 	}
