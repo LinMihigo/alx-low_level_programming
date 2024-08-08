@@ -1,4 +1,5 @@
 #include "main.h"
+#define MAX_BITS_ULONG_INT 64
 /**
  * set_bit - set value of a bit to 1 at a given index
  * @n: pointer 
