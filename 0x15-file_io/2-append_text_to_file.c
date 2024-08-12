@@ -18,7 +18,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (!text_content)
 	{
-		while (text_content[len] != '\0';)
+		while (text_content[len] != '\0')
 			len++;
 
 		w = write(o, text_content, len);
