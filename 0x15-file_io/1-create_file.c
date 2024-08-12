@@ -1,20 +1,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include "main.h"
-/**
-* _strlen - str len
-* @str: pointer to str
-* Return: len
-*/
-int _strlen(char *str)
-{
-	int n;
 
-	while (*str++ != '\0')
-		n++;
-
-	return (n);
-}
 /**
  * read_textfile - read a text file and prints it to STDOUT
  * @filename: file name to create
@@ -41,3 +28,18 @@ int _strlen(char *str)
 
 	return (1);
  }
+
+/**
+* _strlen - str len
+* @str: pointer to str
+* Return: len
+*/
+int _strlen(char *str)
+{
+	int n;
+
+	while (*str++ != '\0')
+		n++;
+
+	return (n);
+}
