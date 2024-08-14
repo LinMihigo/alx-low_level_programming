@@ -1,43 +1,36 @@
-#include <sys/types.h>
-#include <sys/stat.h>
 #include "main.h"
-/**
-* _strlen - str len
-* @str: pointer to str
-* Return: len
-*/
-int _strlen(char *str)
-{
-	int n;
 
-	while (*str++ != '\0')
-		n++;
-
-	return (n);
-}
 /**
- * read_textfile - read a text file and prints it to STDOUT
- * @filename: file name to create
+ * create_file - a function that creates a file
+ *
+ * @filename: name of file to create
  * @text_content: string to write to file
- * Return: 1 on success, -1 on failure
- */
- int create_file(const char *filename, char *text_content)
- {
-	int c, w, len;
+ *
+ * Return: 1 on success OR -1 on faliure
+*/
+int create_file(const char *filename, char *text_content)
+{
+	int file, write_status, words = 0;
 
-	if (!filename)
+	if (filename == NULL) /*check if filename is present*/
 		return (-1);
 
-	c = creat(filename, S_IRUSR | S_IWUSR);
-	if (text_content)
-		len = _strlen(text_content);
-
-	w = write(c, text_content, len);
-
-	if (c == -1 || w == -1)
+	/*open file by creating it and if it exists write but truncate to 0*/
+	file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+	if (file == -1) /*check if file creation was a success*/
 		return (-1);
 
-	close(c);
+	if (text_content) /*write content to file if its not NULL*/
+	{
+		while (text_content[words] != '\0') /*find number of words*/
+			words++;
 
+		/*write to file*/
+		write_status = write(file, text_content, words);
+		if (write_status == -1) /*check if write was a success*/
+			return (-1);
+	}
+
+	close(file); /*close file*/
 	return (1);
- }
+}
