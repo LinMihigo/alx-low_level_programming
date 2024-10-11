@@ -7,12 +7,7 @@
 */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-    unsigned long int idx = hash_djb2(key);
-    hash_node_t *node;
+	unsigned long int hash_val = hash_djb2(key);
 
-    node = malloc(sizeof(hash_node_t));
-    if (!node)
-        exit(EXIT_FAILURE);
-    node->key = malloc()
-
+	return (hash_val % size);
 }
